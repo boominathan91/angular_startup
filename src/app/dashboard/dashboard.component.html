@@ -1,0 +1,10 @@
+<h3 *ngIf="authService.isAuthenticated()">Top Products</h3>
+<div class="grid grid-pad" *ngIf="authService.isAuthenticated()">
+	<a *ngFor="let product of products" class="col-l-4" routerLink="/detail/{{product.id}}">
+		<div class="module product">
+			<h4>{{product.name}}</h4>
+		</div>
+	</a>
+</div>
+
+<app-product-search *ngIf="authService.isAuthenticated()"></app-product-search>

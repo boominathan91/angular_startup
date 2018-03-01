@@ -1,0 +1,28 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Products</a>
+
+      <button
+        class="btn btn-primary btn-margin"
+        routerLink="/" *ngIf="authService.isAuthenticated()">
+          Home
+      </button>
+
+      <button
+        class="btn btn-primary btn-margin"
+        *ngIf="!authService.isAuthenticated()"
+        (click)="authService.login()">
+          Log In
+      </button>
+
+      <button
+        class="btn btn-primary btn-margin"
+        *ngIf="authService.isAuthenticated()"
+        (click)="authService.logout()">
+          Log Out
+      </button>
+
+    </div>
+  </div>
+</nav>
